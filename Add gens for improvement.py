@@ -8,9 +8,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 import pickle
 
-est_gp = pickle.load(open("D:\Projects\Project-Dr. Amlan Dutta\gp_model(1).pkl", 'rb'))
+est_gp = pickle.load(open("function_filename.pkl", 'rb'))
 #Data processing
-total_file = pd.read_excel("D:\Projects\Project-Dr. Amlan Dutta\Training-8th_in Xls form.xls")
+total_file = pd.read_excel("Dataset.xls")
 total_file = total_file.drop(['S', 'Si', 'P', 'Al', 'Nb', 'Ti', 'Reference'], axis=1)
 
 X = np.array(total_file.iloc[:, :-1])
@@ -61,8 +61,8 @@ total_output = pd.DataFrame(total_output)
 X = pd.DataFrame(X)
 y = pd.DataFrame(y)
 export_data = pd.concat([X, y, total_output], axis=1)
-export_data.to_excel("D:\Projects\Project-Dr. Amlan Dutta\Project data(2).xls")
+export_data.to_excel("Export_data.xls")
 
 #Exporting the function
-filename = "D:\Projects\Project-Dr. Amlan Dutta\gp_model(2).pkl"
+filename = "gp_model.pkl"
 pickle.dump(est_gp, open(filename, 'wb'))
