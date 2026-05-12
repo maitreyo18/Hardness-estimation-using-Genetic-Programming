@@ -8,7 +8,7 @@ from sklearn.metrics import mean_squared_error
 import pickle
 
 #Data processing
-total_file = pd.read_excel("C:/Data/Studies/Projects/Amlan_sir/High_hardness.xlsx")
+total_file = pd.read_excel("./High_hardness.xlsx")
 
 X = np.array(total_file.iloc[:, :-1])
 y = np.array(total_file.iloc[:, -1])
