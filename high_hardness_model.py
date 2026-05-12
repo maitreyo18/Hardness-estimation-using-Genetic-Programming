@@ -110,5 +110,5 @@ if est_gp._program.raw_fitness_ > 0.09:
 
 
 #Exporting the function
-filename = "C:/Data/Studies/Projects/Amlan_sir/gp_model_high_hardness_400.pkl"
+filename = "./gp_model_high_hardness_400.pkl"
 pickle.dump(est_gp, open(filename, 'wb'))
